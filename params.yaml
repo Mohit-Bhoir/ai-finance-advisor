@@ -1,0 +1,17 @@
+data:
+  tickers:
+    - SPY
+    - QQQ
+    - AGG
+    - GLD
+  start_date: "2010-01-01"
+
+training:
+  test_size: 0.2
+  random_state: 42
+
+optimization:
+  risk_free_rate: 0.02
+
+billing:
+  fee_rate: 0.01

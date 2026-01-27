@@ -1,0 +1,29 @@
+stages:
+  ingest:
+    cmd: python src/ingestion/market_data.py
+    outs:
+      - data/raw/market.csv
+
+  preprocess:
+    cmd: python src/preprocessing/clean_data.py
+    deps:
+      - data/raw/market.csv
+    outs:
+      - data/processed/clean.csv
+
+  features:
+    cmd: python src/features/build_features.py
+    deps:
+      - data/processed/clean.csv
+    outs:
+      - data/features/features.csv
+
+  train:
+    cmd: python src/models/train_return_model.py
+    deps:
+      - data/features/features.csv
+    outs:
+      - models/return_model.pkl
+
+  optimize:
+    cmd: python src/optimization/portfolio_optimizer.py

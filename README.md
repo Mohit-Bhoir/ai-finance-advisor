@@ -1,49 +1,61 @@
-📊 AI-Driven Personal Finance Advisor
+📊 AI-Driven Personal Finance Portfolio Advisor
 
-An end-to-end data-driven financial portfolio recommendation system that:
+An end-to-end AI-powered financial advisory platform that recommends ETF portfolios based on user risk appetite and capital, runs Monte-Carlo simulations, supports automated retraining pipelines, and generates advisory invoices — built with production-grade MLOps practices.
 
-Accepts user inputs (salary, risk appetite, goals)
-
-Predicts expected returns & risk
-
-Optimizes asset allocation
-
-Runs Monte-Carlo simulations
-
-Retrains models periodically using DVC pipelines
-
-Tracks experiments with MLflow (DagsHub)
-
-Generates monthly advisory invoices (1% of recommended capital)
+⚠️ Disclaimer:
+This project is for illustrative and educational purposes only. Performance is not guaranteed and may not reflect real-world trading outcomes.
 
 🚀 Features
 
-Portfolio optimization (Modern Portfolio Theory)
+📥 User risk & capital profiling
 
-ML return prediction
+📊 Mean-Variance Portfolio Optimization (Efficient Frontier)
 
-Risk profiling engine
+📈 Monte-Carlo scenario simulation
 
-Automated retraining
+🎚️ Risk gauge + percentile visualizations
 
-Model drift detection (planned)
+📉 Risk metrics (Sharpe, volatility, drawdown)
 
-Invoice generator module
+🔁 Retraining pipelines with DVC
 
-REST API
+📊 Experiment tracking with MLflow (DagsHub)
 
-React dashboard (planned)
+🧾 Advisory invoice generation (1% demo fee)
 
-🏗️ Architecture
-User Input → Risk Profiler → Return Model → Optimizer → Simulator
-                     ↓
-                  Invoice Engine
+📄 PDF invoice download
 
-🛠️ Tech Stack
+🌐 Web dashboard built with FastAPI + HTML/CSS
 
-Python
+🐳 Dockerized deployment
 
-FastAPI
+
+🧠 System Architecture
+User Input
+   ↓
+Risk Profiler
+   ↓
+ML Return Model
+   ↓
+Portfolio Optimizer
+   ↓
+Monte Carlo Simulator
+   ↓
+Dashboard + Invoice Generator
+
+🛠 Tech Stack
+
+ML / Quant
+
+Python, Pandas, NumPy
+
+Scikit-learn
+
+PyPortfolioOpt
+
+Monte-Carlo Simulation
+
+MLOps
 
 DVC
 
@@ -51,32 +63,74 @@ MLflow
 
 DagsHub
 
-Pandas / NumPy / Scikit-learn
+Drift Detection (Evidently)
 
-PyPortfolioOpt
+Backend / UI
 
-React + Tailwind
+FastAPI
 
-🔁 Training Pipeline
+HTML + CSS
 
-Tracked with DVC:
+Matplotlib charts
 
-Ingest Market Data
+ReportLab (PDF invoices)
 
-Clean & Preprocess
+Infra
 
-Feature Engineering
+Docker
 
-Train Models
+📊 Dashboard Preview
 
-Portfolio Optimization
+Add screenshots here:
+
+Home input form
+
+Portfolio allocation pie
+
+Monte-Carlo histogram
+
+KPI cards
+
+Invoice PDF download
+
+🔁 Training & Retraining Pipeline
+
+The entire ML workflow is tracked with DVC:
+
+Market data ingestion
+
+Cleaning & preprocessing
+
+Feature engineering
+
+Model training
+
+Portfolio optimization
 
 Evaluation
 
-📦 Setup
-pip install -r requirements.txt
-dvc pull
+Drift detection & retraining
 
-📜 License
+📄 Generate Invoice PDFs
+
+Invoices are automatically generated when users submit the dashboard form.
+
+They can also be downloaded via the UI.
+
+⭐ Future Enhancements
+
+Live rebalancing engine
+
+Regime detection
+
+Alternative asset classes
+
+Cloud deployment
+
+Authentication
+
+Multi-user portfolios
+
+📎 License
 
 MIT

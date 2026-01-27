@@ -1,5 +1,13 @@
-mlflow
-dvc 
-dvc-s3
-dagshub
+pandas
+numpy
 scikit-learn
+yfinance
+pyportfolioopt
+mlflow
+dvc
+dvc-s3
+fastapi
+uvicorn
+matplotlib
+evidently
+python-dotenv

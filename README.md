@@ -1,13 +1,18 @@
 # 📊 AI-Driven Personal Finance Portfolio Advisor
 
-An end-to-end **AI-powered financial advisory platform** that recommendsETF portfolios based on user risk appetite and capital, runs Monte-Carlosimulations, supports automated retraining pipelines, and generatesadvisory invoices --- built using **production-grade MLOps practices**.
+An end-to-end **AI-powered financial advisory platform** that recommends
+ETF portfolios based on user risk appetite and capital, runs Monte-Carlo
+simulations, supports automated retraining pipelines, and generates
+advisory invoices --- built using **production-grade MLOps practices**.
 
-> ⚠️ **Disclaimer**  
-> This portfolio advisor engine is for illustrative and educationalpurposes only.  
-> Performance is not guaranteed to be optimal or representative ofreal-world trading results.  
+> ⚠️ **Disclaimer**\
+> This portfolio advisor engine is for illustrative and educational
+> purposes only.\
+> Performance is not guaranteed to be optimal or representative of
+> real-world trading results.\
 > Use at your own risk.
 
----
+------------------------------------------------------------------------
 
 ## 🚀 Features
 
@@ -25,15 +30,23 @@ An end-to-end **AI-powered financial advisory platform** that recommendsETF port
 -   🌐 Web dashboard built with FastAPI + HTML/CSS
 -   🐳 Dockerized deployment
 
----
+------------------------------------------------------------------------
 
 ## 🧠 System Architecture
 
-```
-User Input   ↓Risk Profiler   ↓ML Return Model   ↓Portfolio Optimizer   ↓Monte-Carlo Simulator   ↓Dashboard + Invoice Generator
-```
+    User Input
+       ↓
+    Risk Profiler
+       ↓
+    ML Return Model
+       ↓
+    Portfolio Optimizer
+       ↓
+    Monte-Carlo Simulator
+       ↓
+    Dashboard + Invoice Generator
 
----
+------------------------------------------------------------------------
 
 ## 🛠 Tech Stack
 
@@ -63,70 +76,70 @@ User Input   ↓Risk Profiler   ↓ML Return Model   ↓Portfolio Optimizer   �
 
 -   Docker
 
----
+------------------------------------------------------------------------
 
 ## 📊 Dashboard Preview
 
 *Add screenshots here:*
 
--   Home input form
--   Portfolio allocation pie chart
--   Monte-Carlo distribution histogram
--   KPI cards
--   Risk gauge meter
+-   Home input form\
+-   Portfolio allocation pie chart\
+-   Monte-Carlo distribution histogram\
+-   KPI cards\
+-   Risk gauge meter\
 -   Invoice PDF download
 
----
+------------------------------------------------------------------------
 
 ## 🔁 Training & Retraining Pipeline
 
 The entire ML workflow is tracked with **DVC**:
 
-1.  Market data ingestion
-2.  Cleaning & preprocessing
-3.  Feature engineering
-4.  Model training
-5.  Portfolio optimization
-6.  Evaluation & backtesting
+1.  Market data ingestion\
+2.  Cleaning & preprocessing\
+3.  Feature engineering\
+4.  Model training\
+5.  Portfolio optimization\
+6.  Evaluation & backtesting\
 7.  Drift detection & retraining
 
 Run the full pipeline:
 
-```bash
+``` bash
 dvc repro
 ```
 
----
+------------------------------------------------------------------------
 
 ## 🐳 Run Locally
 
 ### 1️⃣ Install dependencies
 
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
----
+------------------------------------------------------------------------
 
 ### 2️⃣ Run ML pipeline
 
-```bash
+``` bash
 dvc repro
 ```
 
----
+------------------------------------------------------------------------
 
 ### 3️⃣ Start API server
 
-```bash
+``` bash
 uvicorn src.api.main:app --reload
 ```
 
 Open in browser:
 
-👉 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+👉 http://127.0.0.1:8000/
 
----
+------------------------------------------------------------------------
 
 ## 📄 Invoice PDFs
 
@@ -134,39 +147,37 @@ Invoices are generated automatically after portfolio recommendations.
 
 Users can download them directly from the dashboard.
 
----
+------------------------------------------------------------------------
 
 ## 📉 Drift Monitoring
 
 Generate drift reports:
 
-```bash
+``` bash
 python src/retraining/drift_detector.py
 ```
 
 This creates:
 
-```
-drift_report.html
-```
+    drift_report.html
 
----
+------------------------------------------------------------------------
 
 ## 🐳 Docker
 
 Build image:
 
-```bash
+``` bash
 docker build -t ai-finance-advisor .
 ```
 
 Run container:
 
-```bash
+``` bash
 docker run -p 8000:8000 ai-finance-advisor
 ```
 
----
+------------------------------------------------------------------------
 
 ## 💼 Why This Project Matters
 
@@ -180,9 +191,10 @@ This system demonstrates:
 -   SaaS-style billing simulation
 -   product-driven engineering
 
-Designed for **AI/ML Engineer** and **FinTech / Quantitative Finance**roles.
+Designed for **AI/ML Engineer** and **FinTech / Quantitative Finance**
+roles.
 
----
+------------------------------------------------------------------------
 
 ## ⭐ Future Enhancements
 
@@ -193,15 +205,19 @@ Designed for **AI/ML Engineer** and **FinTech / Quantitative Finance**roles.
 -   Authentication
 -   Multi-user portfolios
 
----
+------------------------------------------------------------------------
 
 ## 📜 License
 
 MIT
 
----
+------------------------------------------------------------------------
 
 ## 🧾 CV Header Version
 
-**AI-Driven Personal Finance Portfolio Advisor** --- *Python, FastAPI,DVC, MLflow, PyPortfolioOpt, Docker*  
-Built a production-style AI finance platform that optimizes ETFportfolios, runs Monte-Carlo simulations, supports retraining pipelineswith drift monitoring, and provides a web dashboard with automatedinvoice generation.
+**AI-Driven Personal Finance Portfolio Advisor** --- *Python, FastAPI,
+DVC, MLflow, PyPortfolioOpt, Docker*\
+Built a production-style AI finance platform that optimizes ETF
+portfolios, runs Monte-Carlo simulations, supports retraining pipelines
+with drift monitoring, and provides a web dashboard with automated
+invoice generation.

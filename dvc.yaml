@@ -6,3 +6,25 @@ stages:
       - params.yaml
     outs:
       - data/raw/market_prices.csv
+
+  preprocess:
+    cmd: python src/preprocessing/clean_data.py
+    deps:
+      - data/raw/market_prices.csv
+    outs:
+      - data/processed/clean_prices.csv
+
+  features:
+    cmd: python src/features/build_features.py
+    deps:
+      - data/processed/clean_prices.csv
+    outs:
+      - data/features/returns_features.csv
+
+  train:
+    cmd: python src/models/train_return_model.py
+    deps:
+      - data/features/returns_features.csv
+      - params.yaml
+    outs:
+      - models/return_model.pkl

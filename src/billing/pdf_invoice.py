@@ -4,7 +4,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from pathlib import Path
 
 OUTPUT_DIR = Path("invoices")
-OUTPUT_DIR.mkdir(exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def create_invoice_pdf(invoice: dict):
     path = OUTPUT_DIR / f"{invoice['invoice_id']}.pdf"

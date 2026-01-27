@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  ingest:
+    cmd: python src/ingestion/market_data.py
+    deps:
+    - path: params.yaml
+      hash: md5
+      md5: f35b644198ff6b1e1ad0dd70e1f82645
+      size: 213
+    - path: src/ingestion/market_data.py
+      hash: md5
+      md5: 787ac3189e4368062e24d1e654badcce
+      size: 792
+    outs:
+    - path: data/raw/market_prices.csv
+      hash: md5
+      md5: b86faa32deedae83df8f955c3459a2af
+      size: 340945
+  preprocess:
+    cmd: python src/preprocessing/clean_data.py
+    deps:
+    - path: data/raw/market_prices.csv
+      hash: md5
+      md5: b86faa32deedae83df8f955c3459a2af
+      size: 340945
+    outs:
+    - path: data/processed/clean_prices.csv
+      hash: md5
+      md5: 9a52d13e9653c38045ffaf7c8625a253
+      size: 339982
+  features:
+    cmd: python src/features/build_features.py
+    deps:
+    - path: data/processed/clean_prices.csv
+      hash: md5
+      md5: 9a52d13e9653c38045ffaf7c8625a253
+      size: 339982
+    outs:
+    - path: data/features/returns_features.csv
+      hash: md5
+      md5: 9a5e6ef601324e6cc8b7120d89b4b261
+      size: 398637
+  train:
+    cmd: python src/models/train_return_model.py
+    deps:
+    - path: data/features/returns_features.csv
+      hash: md5
+      md5: 9a5e6ef601324e6cc8b7120d89b4b261
+      size: 398637
+    - path: params.yaml
+      hash: md5
+      md5: f35b644198ff6b1e1ad0dd70e1f82645
+      size: 213
+    outs:
+    - path: models/return_model.pkl
+      hash: md5
+      md5: 904e2d2fed9ff7ba25763e7ce7a250d6
+      size: 78507113

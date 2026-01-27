@@ -9,5 +9,5 @@ dvc-s3
 fastapi
 uvicorn
 matplotlib
-evidently
+evidently==0.2.8
 python-dotenv

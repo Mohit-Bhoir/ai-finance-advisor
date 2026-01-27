@@ -213,11 +213,8 @@ MIT
 
 ------------------------------------------------------------------------
 
-## 🧾 CV Header Version
 
-**AI-Driven Personal Finance Portfolio Advisor** --- *Python, FastAPI,
-DVC, MLflow, PyPortfolioOpt, Docker*\
-Built a production-style AI finance platform that optimizes ETF
-portfolios, runs Monte-Carlo simulations, supports retraining pipelines
-with drift monitoring, and provides a web dashboard with automated
-invoice generation.
+## 🌐 Live Demo
+
+https://ai-finance-advisor.onrender.com
+

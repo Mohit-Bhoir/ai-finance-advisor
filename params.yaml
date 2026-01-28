@@ -1,10 +1,14 @@
 data:
   tickers:
-    - SPY
-    - QQQ
+    - VTI
+    - VOO
+    - AAPL
+    - MSFT
+    - GOOGL
+    - AMZN
     - AGG
     - GLD
-  start_date: "2010-01-01"
+  start_date: "2012-01-01"
 
 training:
   test_size: 0.2

@@ -13,3 +13,5 @@ evidently==0.2.8
 python-dotenv
 reportlab
 python-multipart
+turtle
+tkinter

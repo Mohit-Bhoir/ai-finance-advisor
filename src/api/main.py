@@ -1,4 +1,3 @@
-from turtle import width
 from fastapi import FastAPI, Request, background
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel

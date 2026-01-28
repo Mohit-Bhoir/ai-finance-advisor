@@ -1,9 +1,16 @@
 from src.optimization.portfolio_optimizer import optimize_portfolio
 from src.simulation.monte_carlo import simulate
+from src.recommender.capital_policy import capital_profile
 
 
 def recommend(risk_level: str, capital: float):
-    weights, perf = optimize_portfolio(risk_level)
+
+    policy = capital_profile(capital)
+
+    weights, perf = optimize_portfolio(
+        risk_level=risk_level,
+        capital=capital,
+    )
 
     sim = simulate(weights)
 
@@ -14,4 +21,5 @@ def recommend(risk_level: str, capital: float):
         "sharpe": perf[2],
         "simulation": sim,
         "recommended_capital": capital,
+        "capital_policy": policy,
     }

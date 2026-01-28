@@ -11,7 +11,8 @@ def simulate(weights: dict, n_years=10, n_sims=1000):
     mu = returns.mean()
     cov = returns.cov()
 
-    w = np.array([weights[k] for k in returns.columns])
+    # Use 0.0 as default weight if key is missing
+    w = np.array([weights.get(k, 0.0) for k in returns.columns])
 
     results = []
 

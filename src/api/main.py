@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Request
+from turtle import width
+from fastapi import FastAPI, Request, background
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
@@ -354,6 +355,55 @@ async def ui_submit(request: Request):
             font-weight: 600;
         }}
 
+        .alloc-card {{
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+            max-width: 420px;
+        }}
+
+        .alloc-table {{
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }}
+
+        .alloc-table th {{
+            background: #f6f8fb;
+            text-align: left;
+            padding: 10px;
+        }}
+        
+        .alloc-table td {{
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }}
+
+        .alloc-table tr:last-child td {{
+            border-bottom: none;
+        }}
+
+        .alloc-table td:last-child {{
+            text-align: right;
+            font-weight: 600;
+        }}
+
+        .alloc-grid {{
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 28px;
+            align-items: center;
+        }}
+
+        @media (max-width: 900px) {{
+            .alloc-grid {{
+                grid-template-columns: 1fr;
+            }}
+        }}
+
+        
+        
         
         
         
@@ -408,9 +458,48 @@ async def ui_submit(request: Request):
         </div>
 
         <div class="section">
-        <h2>Portfolio Allocation</h2>
+
+<h2>📊 Portfolio Allocation</h2>
+
+<div class="alloc-grid">
+
+    <div>
         <img src="data:image/png;base64,{pie_img}" width="420"/>
-        </div>
+    </div>
+
+    <div class="alloc-card">
+
+        <table class="alloc-table">
+        <thead>
+        <tr>
+            <th>Asset</th>
+            <th>Weight</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {''.join(
+            f"<tr><td>{k}</td><td>{v*100:.1f}%</td></tr>"
+            for k, v in sorted(
+                advice["weights"].items(),
+                key=lambda x: x[1],
+                reverse=True,
+            )
+        )}
+        </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+</div>
+
+
+
+
+
+
 
         <div class="section">
         <h2>Monte Carlo Outcome Distribution</h2>
@@ -476,7 +565,7 @@ async def ui_submit(request: Request):
         </div>
                 <footer class="footer">
             <div>
-                <b>AI Finance Advisor</b> · v0.1.0 · Demo Build
+                <b>AI Finance Advisor</b> · v0.1.0 · Demo Build by Mohit Bhoir
             </div>
 
             <div>

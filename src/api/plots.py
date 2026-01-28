@@ -17,11 +17,27 @@ def allocation_pie(weights: dict):
     labels = list(weights.keys())
     values = list(weights.values())
 
-    fig, ax = plt.subplots()
-    ax.pie(values, labels=labels, autopct="%1.1f%%")
+    fig, ax = plt.subplots(figsize=(7, 5))
+
+    wedges, texts, autotexts = ax.pie(
+        values,
+        autopct="%1.1f%%",
+        startangle=90,
+        pctdistance=0.8,
+    )
+
+    ax.legend(
+        wedges,
+        labels,
+        title="Assets",
+        loc="center left",
+        bbox_to_anchor=(1.05, 0.5),
+    )
+
     ax.set_title("Portfolio Allocation")
 
     return fig_to_base64(fig)
+
 
 
 def monte_carlo_histogram(sim_results):

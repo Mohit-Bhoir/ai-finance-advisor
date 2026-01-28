@@ -216,5 +216,5 @@ MIT
 
 ## 🌐 Live Demo
 
-https://ai-finance-advisor.onrender.com
+https://ai-finance-advisor-8hd9.onrender.com/
 

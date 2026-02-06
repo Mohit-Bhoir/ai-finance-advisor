@@ -123,7 +123,7 @@ def home():
 
         <form method="post" action="/ui">
 
-        <label>User ID</label>
+        <label>Your Name</label>
         <input name="user_id" required>
 
         <label>Risk Level</label>
